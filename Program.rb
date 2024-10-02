@@ -33,6 +33,6 @@ result.each do |segment|
 	resultStr += "\n,"
 end
 
-resultStr[-1] = "\n]"
+resultStr[-1] = ']'
 
 puts(resultStr)
