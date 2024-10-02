@@ -13,6 +13,7 @@ class SplitPie
 
 		countRaisins = CountRaisinsInPie(matrix, raisin)
 		raisinsIndex = RaisinsIndex(matrix, raisin)
+		divisors = Divisors(countRaisins)
 	end
 
 	def self.IsCorrect?(matrix, raisin, maxRaisins = 9)
@@ -53,8 +54,13 @@ class SplitPie
 		end
 	end
 
+	def self.Divisors(n)
+		(1..n).select { |i| (n % i).zero? }
+	end
+
 	private_class_method :IsCorrect?
 	private_class_method :IsRectangular?
 	private_class_method :CountRaisinsInPie
 	private_class_method :RaisinsIndex
+	private_class_method :Divisors
 end
