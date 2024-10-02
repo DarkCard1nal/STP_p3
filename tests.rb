@@ -94,11 +94,14 @@ arr = [	[[	%w[. .],
 			nil]]
 # rubocop:enable Layout/ArrayAlignment, Layout/SpaceInsideArrayLiteralBrackets
 
+completed = 0
 arr.each do |test|
 	p test[0]
 	result = SplitPie.Split(test[0])
 	p result
 	puts("Result: #{result == test[1]}")
+	completed += result == test[1] ? 1 : 0
 end
 
+puts("\nPassed #{completed}/#{arr.length} tests!!")
 puts('Stop tests!')
