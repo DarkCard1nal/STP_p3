@@ -1,0 +1,21 @@
+AllCops:
+  NewCops: enable
+
+Layout/IndentationStyle:
+  IndentationWidth: 1
+  EnforcedStyle: tabs
+
+Layout/IndentationWidth:
+  Width: 1
+
+Naming/VariableName:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Naming/MethodName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
