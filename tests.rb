@@ -7,19 +7,30 @@ puts('Start tests!')
 # rubocop:disable Layout/ArrayAlignment, Layout/SpaceInsideArrayLiteralBrackets
 arr = [	[[	%w[. .],
 			%w[. . .]],
+
 			nil],
 
 		[[	%w[. o],
 			%w[. .]],
+
 			nil],
+
 		[[	%w[o o o .],
 			%w[o o o .],
 			%w[o o o .],
 			%w[o o o o]],
+
 			nil],
 
 		[[	nil],
+
 			nil],
+
+		[[	%w[o o o],
+			%w[o o o],
+			%w[o o o]],
+
+		[[	%w[o]], [%w[o]], [%w[o]], [%w[o]], [%w[o]], [%w[o]], [%w[o]], [%w[o]], [%w[o]]]],
 
 		[[	%w[. . . . . . . .],
 			%w[. . o . . . . .],
@@ -59,7 +70,28 @@ arr = [	[[	%w[. .],
 		[	%w[. . o . . .],
 			%w[. . . . . .]],
 		[	%w[. . . o . .],
-			%w[. . . . . .]]]]]
+			%w[. . . . . .]]]],
+
+		[[	%w[. . . .],
+			%w[. o o .],
+			%w[. o o .],
+			%w[. . . .]],
+
+		[[	%w[. .],
+			%w[. o]],
+		[	%w[. .],
+			%w[o .]],
+		[	%w[. o],
+			%w[. .]],
+		[	%w[o .],
+			%w[. .]]]],
+
+		[[	%w[. . . . .],
+			%w[. o o . .],
+			%w[. . o o .],
+			%w[. . . . .]],
+
+			nil]]
 # rubocop:enable Layout/ArrayAlignment, Layout/SpaceInsideArrayLiteralBrackets
 
 arr.each do |test|

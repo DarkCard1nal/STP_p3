@@ -19,3 +19,6 @@ Naming/MethodName:
 
 Naming/MethodParameterName:
   Enabled: false
+
+Naming/BlockParameterName:
+  Enabled: false

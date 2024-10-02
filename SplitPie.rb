@@ -9,7 +9,10 @@ class SplitPie
 	end
 
 	def self.Split(matrix, raisin = 'o')
-		nil if IsCorrect?(matrix, raisin) == false
+		return nil if IsCorrect?(matrix, raisin) == false
+
+		countRaisins = CountRaisinsInPie(matrix, raisin)
+		raisinsIndex = RaisinsIndex(matrix, raisin)
 	end
 
 	def self.IsCorrect?(matrix, raisin, maxRaisins = 9)
@@ -42,7 +45,16 @@ class SplitPie
 		matrix.flatten.join.downcase.count(raisin.downcase)
 	end
 
+	def self.RaisinsIndex(matrix, raisin)
+		matrix.each_with_index.flat_map do |row, rowIndex|
+			row.map.with_index do |element, colIndex|
+				[rowIndex, colIndex] if element.casecmp(raisin).zero?
+			end.compact
+		end
+	end
+
 	private_class_method :IsCorrect?
 	private_class_method :IsRectangular?
 	private_class_method :CountRaisinsInPie
+	private_class_method :RaisinsIndex
 end
