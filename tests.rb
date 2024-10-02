@@ -1,12 +1,27 @@
 # frozen_string_literal: true
 
-require_relative 'Converter'
 require_relative 'SplitPie'
 
 puts('Start tests!')
 
 # rubocop:disable Layout/ArrayAlignment, Layout/SpaceInsideArrayLiteralBrackets
-arr = [[[	%w[. . . . . . . .],
+arr = [	[[	%w[. .],
+			%w[. . .]],
+			nil],
+
+		[[	%w[. o],
+			%w[. .]],
+			nil],
+		[[	%w[o o o .],
+			%w[o o o .],
+			%w[o o o .],
+			%w[o o o o]],
+			nil],
+
+		[[	nil],
+			nil],
+
+		[[	%w[. . . . . . . .],
 			%w[. . o . . . . .],
 			%w[. . . o . . . .],
 			%w[. . . . . . . .]],
@@ -49,7 +64,7 @@ arr = [[[	%w[. . . . . . . .],
 
 arr.each do |test|
 	p test[0]
-	result = SplitPie.Split(test[0], 'o')
+	result = SplitPie.Split(test[0])
 	p result
 	puts("Result: #{result == test[1]}")
 end
